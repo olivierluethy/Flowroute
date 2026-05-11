@@ -24,6 +24,7 @@ const NAV_ITEMS: HeaderNavItem[] = [
   { link_id: "features", link_text: "Features", destination: "#features", is_anchor: true },
   { link_id: "how_it_works", link_text: "How it works", destination: "#how-it-works", is_anchor: true },
   { link_id: "blog", link_text: "Blog", destination: "/blog", is_anchor: false },
+  { link_id: "contact", link_text: "Contact", destination: "/contact", is_anchor: false },
 ]
 
 export function Header() {

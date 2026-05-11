@@ -37,6 +37,10 @@ const RESOURCE_LINKS: FooterLink[] = [
   },
 ]
 
+const COMPANY_LINKS: FooterLink[] = [
+  { link_id: "contact", link_text: "Contact", destination: "/contact", is_anchor: false },
+]
+
 const LEGAL_LINKS: FooterLink[] = [
   { link_id: "privacy", link_text: "Privacy", destination: "#", is_anchor: false },
   { link_id: "terms", link_text: "Terms", destination: "#", is_anchor: false },
@@ -55,7 +59,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-card/30">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link
               href="/"
@@ -93,6 +97,23 @@ export function Footer() {
             <h3 className="font-semibold">Resources</h3>
             <ul className="mt-4 space-y-3">
               {RESOURCE_LINKS.map((item) => (
+                <li key={item.link_id}>
+                  <Link
+                    href={item.destination}
+                    onClick={() => handleNav(item)}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {item.link_text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold">Company</h3>
+            <ul className="mt-4 space-y-3">
+              {COMPANY_LINKS.map((item) => (
                 <li key={item.link_id}>
                   <Link
                     href={item.destination}
